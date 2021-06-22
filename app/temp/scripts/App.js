@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_MobileMenu__WEBPACK_IMPORTED_MODULE_0__);
+ //const loginProcess = new LoginProcess();
+
+var mobileScreen = new _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_0___default.a();
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports) {
 
 
