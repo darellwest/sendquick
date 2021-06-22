@@ -1,0 +1,80 @@
+
+body{
+	font-family: "roboto", sans-serif;
+	background: $bgcolor;
+	color: $fontblack;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+*{
+	box-sizing: border-box;
+		font-family: "roboto", sans-serif;
+
+}
+
+
+
+a{
+	text-decoration: none;
+	color: $fontwhite;
+}
+
+::placeholder{
+	font-style: normal;
+	margin-right: 5px;
+}
+
+textarea{
+	border: none;
+	outline: none;
+}
+
+textarea:focus{
+	border: solid 1px $secondarycolor;
+	outline: none;
+}
+
+textarea{
+	resize: none;
+	padding: 5px;
+}
+
+input{
+	border: none;
+	outline: none;
+	padding: 5px;
+	font-size: 16px;
+}
+
+input[type="text"]:focus{
+	background: $bgcolor;
+}
+
+input[type="submit"]:hover{
+	cursor: pointer;
+}
+
+select{
+	border: none;
+	outline: none;
+	font-size: 16px;
+}
+
+select:focus{
+	outline: none;
+	border: none;
+}
+
+option:active{
+	outline: none;
+	border: none;
+	background: $secondarycolor;
+}
+
+option{
+	font-size: 16px;
+}
+
+
+
