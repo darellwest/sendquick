@@ -1,0 +1,28 @@
+.primary-nav{
+	
+	&--pull-right{
+		@mixin atMedium{
+			float: right;
+		}
+		
+	}
+
+	ul{
+		padding: 0;
+		margin: 0;
+		@mixin clearfix;
+	}
+
+	li{
+		list-style-type: none;
+		margin-bottom: 4px;
+
+		@mixin atMedium{
+			float: left;
+			padding-right: 18px;
+		}
+	}
+
+	&--dasboard{
+	}
+}
