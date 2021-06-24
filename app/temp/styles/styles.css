@@ -446,7 +446,7 @@ option{
 }
 
 .site-header--transparent{
-			background: #3211FD;
+			background: #000000;
 		
 	}
 
@@ -617,3 +617,40 @@ option{
 
 .primary-nav--dasboard{
 	}
+
+.hero{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.hero__bg-image{
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
+
+.hero__content{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #fff;
+	}
+
+.hero__site-title{
+		font-size: 56px;
+	}
+
+.hero__site-description{
+		font-size: 36px;
+		line-height: 1.5;
+		font-weight: 300;
+		background: rgba(#000000, 1);
+	}
+
+.wrapper{
+	padding-right: 120px;
+	padding-left: 120px;
+	overflow: hidden;
+}
