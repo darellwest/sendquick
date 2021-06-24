@@ -446,7 +446,7 @@ option{
 }
 
 .site-header--transparent{
-			background: #000;
+			background: #000000;
 		
 	}
 
@@ -646,7 +646,7 @@ option{
 		font-size: 36px;
 		line-height: 1.5;
 		font-weight: 300;
-		background: rgba(#primarycolor, 1);
+		background: rgba(#000000, 1);
 	}
 
 .wrapper{
