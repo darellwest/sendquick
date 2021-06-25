@@ -349,8 +349,6 @@ template {
   display: none;
 }
 
-/*#F5FDFC;*/
-
 body{
 	font-family: "roboto", sans-serif;
 	background: #EEF0FA;
@@ -446,7 +444,7 @@ option{
 }
 
 .site-header--transparent{
-			background: #000000;
+			background: #000;
 		
 	}
 
@@ -646,7 +644,7 @@ option{
 		font-size: 36px;
 		line-height: 1.5;
 		font-weight: 300;
-		background: rgba(#000000, 1);
+		background: rgba(0,0,0, 1);
 	}
 
 .wrapper{
