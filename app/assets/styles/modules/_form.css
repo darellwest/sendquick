@@ -1,0 +1,16 @@
+.form{
+	color: $primarycolor;
+	&__form{
+		margin-bottom: -10px;
+	}
+	&__group{
+		margin-bottom: 12px;
+		label, input{
+			display: block;
+			width: 100%;
+		}
+		label{
+			margin-bottom: 5px;
+		}
+	}
+}
