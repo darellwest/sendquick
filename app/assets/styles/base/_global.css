@@ -2,8 +2,7 @@
 body{
 	font-family: "roboto", sans-serif;
 	background: $bgcolor;
-	color: $fontblack;
-	height: 100%;
+	color: $black;
 	overflow-x: hidden;
 }
 
@@ -17,7 +16,7 @@ body{
 
 a{
 	text-decoration: none;
-	color: $fontwhite;
+	color: $white;
 }
 
 ::placeholder{
@@ -31,7 +30,7 @@ textarea{
 }
 
 textarea:focus{
-	border: solid 1px $secondarycolor;
+	/*border: solid 1px $secondarycolor;*/
 	outline: none;
 }
 
@@ -69,7 +68,7 @@ select:focus{
 option:active{
 	outline: none;
 	border: none;
-	background: $secondarycolor;
+	/*background: $secondarycolor;*/
 }
 
 option{

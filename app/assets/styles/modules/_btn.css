@@ -1,0 +1,12 @@
+.btn{
+	display: block;
+	width: 100%;
+	text-align: center;
+	background: $primary;
+	padding: 10px;
+	color: black;
+	&--secondary{
+		background: $secondary;
+		color: $white;
+	}
+}

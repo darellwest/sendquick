@@ -6,7 +6,6 @@
 	@mixin atSmall{
 		display: grid;
 		grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
-		
 		&--gutter{
 			grid-column-gap: 5vw;
 		}
@@ -14,9 +13,7 @@
 			grid-column: span 6;
 		}
 		&__col-sm-4{
-			grid-column: span 4;
-			background: blue;
-			padding: 0 50%;
+			grid-column: span 4;			
 		}
 	}
 
