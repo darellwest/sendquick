@@ -1,0 +1,21 @@
+.form{
+	color: $black;
+	&__form{
+		/*margin-bottom: -12px;*/
+	}
+	&__group{
+		margin-bottom: 12px;
+		label, input, select{
+			display: block;
+			width: 100%;
+		}
+		input, select{
+			height: 38px;
+		}
+
+		label{
+			margin-bottom: 5px;
+			text-transform: uppercase;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.sec{
+	&--sec-m-b{
+		margin-bottom: 16px;
+	}
+	&--sec-m-t{
+		margin-top: 16px;
+	}
+	&--sec-p-t-b{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	&--blo-m-t{
+		margin-top: 10px;
+	}
+	&--blo-m-b{
+		margin-bottom: 25px;
+	}
+	&--blo-p{
+		padding: 10px;
+	}
+}

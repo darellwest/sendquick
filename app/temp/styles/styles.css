@@ -349,20 +349,17 @@ template {
   display: none;
 }
 
-/*#F5FDFC;*/
-
 body{
 	font-family: "roboto", sans-serif;
 	background: #EEF0FA;
 	color: #000;
-	height: 100%;
 	overflow-x: hidden;
 }
 
 *{
 	box-sizing: border-box;
-		font-family: "roboto", sans-serif;
-
+	font-family: "roboto", sans-serif;
+	letter-spacing: 1px;
 }
 
 a{
@@ -391,7 +388,7 @@ textarea{
 }
 
 textarea:focus{
-	border: solid 1px #FFA500;
+	/*border: solid 1px $secondarycolor;*/
 	outline: none;
 }
 
@@ -429,7 +426,7 @@ select:focus{
 option:active{
 	outline: none;
 	border: none;
-	background: #FFA500;
+	/*background: $secondarycolor;*/
 }
 
 option{
@@ -445,21 +442,11 @@ option{
 	width: 100vw;
 }
 
-.site-header--transparent{
-			background: #3211FD;
-		
-	}
-
-@media (min-width: 970px){
-	}
-
 .site-header--blue{
 		background:red;
 	}
 
 .site-header--light-blue{
-		border-bottom: 2px solid #fff;
-		background: #EEF0FA;
 		height: 10%;
 		position: fixed;
 		width: 100%;
@@ -478,7 +465,7 @@ option{
 		height: 40px;
 	}
 
-@media (min-width: 560px){
+@media (min-width: 600px){
 
 .site-header__logo-image{
 			width: 200px;
@@ -504,7 +491,7 @@ option{
 			left: 0;
 			width: 20px;
 			height: 3px;
-			background: #fff;
+			/*background: $fontwhite;*/
 			transform-origin: 0 0;
 			transition: transform .3s ease-out;
 		}
@@ -515,7 +502,7 @@ option{
 			left:0;
 			width: 20px;
 			height: 3px;
-			background: #fff;
+			/*background: $fontwhite;*/
 			transition: all .3s ease-out;
 			transform-origin: 0 50%;
 		}
@@ -527,12 +514,12 @@ option{
 			left:0;
 			width: 20px;
 			height: 3px;
-			background: #fff;
+			/*background: $fontwhite;*/
 			transform-origin: 0 100%;
 			transition: transform .3s ease-out;
 		}
 
-@media (min-width: 970px){
+@media (min-width: 900px){
 
 .site-header__menu-icon{
 			display: none
@@ -562,7 +549,7 @@ option{
 		padding-left: 20px;
 	}
 
-@media (min-width: 970px){
+@media (min-width: 900px){
 
 .site-header__menu-content{
 			opacity: 1;
@@ -583,7 +570,7 @@ option{
 			top: 5px;
 		}
 
-@media (min-width: 970px){
+@media (min-width: 900px){
 
 .primary-nav--pull-right{
 			float: right
@@ -607,7 +594,7 @@ option{
 		margin-bottom: 4px;
 	}
 
-@media (min-width: 970px){
+@media (min-width: 900px){
 
 .primary-nav li{
 			float: left;
@@ -616,4 +603,90 @@ option{
 	}
 
 .primary-nav--dasboard{
+	}
+
+.hero{
+	position: relative;
+	height: 130vh; 
+	width: 100vw;
+	overflow-x: hidden;
+
+}
+
+@media (min-width: 600px){
+
+.hero{
+		height: 100vh
+
+}
+	}
+
+.hero__bg-image{
+		transform: scaleX(-1);
+		display: block;
+		width: 100%;
+		height: 100%;
+		-o-object-fit: cover;
+		   object-fit: cover;
+	}
+
+.hero__content{
+		color: #fff;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+.hero__site-title{
+		font-size: 20px;
+		line-height: 1;
+		padding: 0;
+	}
+
+@media (min-width: 320px){
+
+.hero__site-title{
+			font-size: 22px;
+			line-height: 1
+	}
+	}
+
+@media (min-width: 414px){
+
+.hero__site-title{
+			font-size: 26px;
+			line-height: 1
+	}
+	}
+
+@media (min-width: 600px){
+
+.hero__site-title{
+			font-size: 40px
+	}
+	}
+
+@media (min-width: 1300px){
+
+.hero__site-title{
+			font-size: 56px
+	}
+	}
+
+.hero__site-description{
+		font-size: 16px;
+		line-height: 1.3;
+		padding: 0;
+		font-weight: 100;
+	}
+
+@media (min-width: 320px){
+
+.hero__site-description{
+			font-size: 16px
+	}
+	}
+
+.sec--blo-p{
+		padding: 10px;
 	}
