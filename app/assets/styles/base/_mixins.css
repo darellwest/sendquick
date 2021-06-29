@@ -55,6 +55,10 @@
 	}
 }
 
+@define-mixin wrapper{
+    padding: 0 5vw;
+}
+
 @define-mixin clearfix{
 	&::after{
 		content:"";

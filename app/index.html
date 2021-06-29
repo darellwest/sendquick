@@ -9,10 +9,10 @@
   	<link rel="stylesheet" type="text/css" href="temp/styles/styles.css">
   	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 </head>
-<body>
-	<header class="site-header site-header--transparent" style="display: none;">
+<body id="home">
+	<header class="site-header">
 		<div class="wrapper">
-			<div class="site-header__logo" style="margin-top: -20px;">
+			<div class="site-header__logo">
 				<a href="index.php"><img class="site-header__logo-image"src="./assets/images/fscs.png" width="200" height="75"></a>
 			</div>
 			<div class="site-header__menu-icon">
@@ -21,7 +21,11 @@
 			<div class="site-header__menu-content">	
 				<nav class="primary-nav primary-nav--pull-right">
 					<ul>
-						<li><a href="index.php">Home</a></li>
+						<li >
+							<a href="index.php">Home
+								<div style="width: 100%; height:2px; background: red"></div>
+							</a>
+						</li>
 						<li><a href="#about-us">About Us</a></li>
 						<li><a href="#services">Services</a></li>
 						<li><a href="testimonies.html">Testimonies</a></li>
@@ -42,6 +46,17 @@
 						<p class="hero__site-description">We specialize in delivering different types of items worldwide; ranging from parcels, golds, documents e.t.c through Air, Land and Sea.</p>
 						<div class="hero__left-btn">
 							<a href="" class="btn btn--secondary">Track Parcel</a>
+						</div>
+						<div id="sure" class="hero__sure &__Aff--show">
+							<div class="hero__Aff">
+								<p>Affordable</p>
+							</div>
+							<div class="hero__Rel">
+								<p >Reliable</p>	
+							</div>
+							<div class="hero__Acc">
+								<p >Acessible</p>
+							</div>
 						</div>
 					</div>
 				</div>
