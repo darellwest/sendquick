@@ -1,16 +1,19 @@
 .row{
-	
+	display: block;
+	&--wrapper{
+		padding: 0 5vw;
+	}
 	@mixin atSmall{
-		@mixin clearfix;
-		display: flex;
-		padding: 0;
-
-		&--gutters {
-			margin-right: -16px;
+		display: grid;
+		grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+		&--gutter{
+			grid-column-gap: 5vw;
 		}
-
-		&--gutters > div{
-			padding-right: 16px;
+		&__col-sm-6{
+			grid-column: span 6;
+		}
+		&__col-sm-4{
+			grid-column: span 4;			
 		}
 	}
 
