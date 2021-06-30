@@ -11,31 +11,68 @@
 </head>
 <body id="home">
 	<header class="site-header">
-		<div class="wrapper">
+		<div class="site-header__wrapper">
 			<div class="site-header__logo">
-				<a href="index.php"><img class="site-header__logo-image"src="./assets/images/fscs.png" width="200" height="75"></a>
+				<a href="index.php"><img class="site-header__logo-image"src="./assets/images/qscs--secondary.png"></a>
 			</div>
-			<div class="site-header__menu-icon">
+			<div id="menu-icon" class="site-header__menu-icon">
 				<div class="site-header__menu-icon__middle"></div>
 			</div>
-			<div class="site-header__menu-content">	
-				<nav class="primary-nav primary-nav--pull-right">
+			<div id="menu-content" class="site-header__menu-content">	
+				<nav class="primary-nav">
 					<ul>
-						<li >
-							<a href="index.php">Home
-								<div style="width: 100%; height:2px; background: red"></div>
+						<li>
+							<a href="#about-us">About Us
+								<div class="site-header__link-hover"></div>
 							</a>
 						</li>
-						<li><a href="#about-us">About Us</a></li>
-						<li><a href="#services">Services</a></li>
-						<li><a href="testimonies.html">Testimonies</a></li>
-						<li><a href="track.php">Track Parcel</a></li>
-						<li><a href="contact.php">Contact Us</a></li>
+						<li>
+							<a href="#services">Services
+								<div class="site-header__link-hover"></div>
+							</a>
+						</li>
+						<li>
+							<a href="testimonies.html">Testimonies
+								<div class="site-header__link-hover"></div>
+							</a>
+						</li>
+						<li>
+							<a href="track.php">Track Parcel
+								<div class="site-header__link-hover"></div>
+							</a>
+						</li>
+						<li><a href="contact.php">ContactUs
+							<div class="site-header__link-hover"></div>
+							</a>
+						</li>
 					</ul>
 				</nav>
 			</div>
 		</div>
 	</header>
+	<div id="mobile-menu" class="mobile-menu">
+		<div class="mobile-menu__container">
+			<div class="mobile-menu__content">
+				<div class="mobile-menu__logo">
+					<a href="index.php">
+						<img class=""src="./assets/images/qscs--secondary.png">
+					</a>
+				</div>
+				<div class="mobile-menu__text">
+					<ul>
+						<li><a href="">About Us</a></li>
+						<li><a href="">Services</a></li>
+						<li><a href="">Testimonies</a></li>
+						<li><a href="">Track Parcel</a></li>
+						<li><a href="">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="mobile-menu__close">
+				<i id="x-close" class="fas fa-times"></i>
+			</div>
+		</div>
+	</div>
 	<section class="hero">
 		<img class="hero__bg-image" src="./assets/images/hero-image.png">
 		<div class="hero__content">
