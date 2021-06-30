@@ -1,0 +1,89 @@
+.mobile-menu{
+	position: fixed;
+	opacity: 0;
+	top: 0;
+	left: -100%;
+	background: rgba($black, 0.8);
+	width: 100vw;
+	height: 100vh;
+	z-index: 20;
+	transition: all .1s ease-out;
+	@mixin atMedium{
+		display: none;
+	}
+
+	&__container{
+		height: 100%;
+		position: relative;
+		left: -100%;
+		transition: all .1s ease-out;
+	}
+
+
+	&--show{
+		left: 0;
+		opacity: 1;
+		.mobile-menu__container{
+			left: 0%;
+		}
+	}
+
+	&__content{
+		background: $bgcolor;
+		display: inline-block;
+		width: 70%;
+		height: 100%;
+		@mixin atSmall{
+			width: 50%;
+		}
+	}
+
+	&__logo{
+		padding-left: 40px;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		margin-bottom: 40px;
+		background: rgba($black, 0.1);
+
+	}
+
+	&__text{
+		padding: 20px 0; 
+		ul{
+
+		}
+		li{
+			margin-bottom: 50px;
+			list-style-type: none;
+		}
+		a{
+			color: $black;
+			font-size: 21px;
+		}
+	}
+
+	&__close{
+		position: absolute;
+		top: 10px;
+		left: 78%;
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+		background: $bgcolor;
+		display: inline-block;
+		@mixin atSmall{
+			left: 75%;
+		}
+		i{
+			position: absolute; 
+			display: block; 
+			top: 50%; 
+			left: 50%; 
+			transform: 
+			translate(-50%, -50%); 
+			font-size: 24px;
+			cursor: pointer;
+		}
+	}
+
+}

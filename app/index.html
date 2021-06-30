@@ -9,47 +9,149 @@
   	<link rel="stylesheet" type="text/css" href="temp/styles/styles.css">
   	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 </head>
-<body>
-	<header class="site-header site-header--transparent" style="display: none;">
-		<div class="wrapper">
-			<div class="site-header__logo" style="margin-top: -20px;">
-				<a href="index.php"><img class="site-header__logo-image"src="./assets/images/fscs.png" width="200" height="75"></a>
+<body id="home">
+	<header class="site-header">
+		<div class="site-header__wrapper">
+			<div class="site-header__logo">
+				<a href="index.php"><img class="site-header__logo-image"src="./assets/images/qscs--secondary.png"></a>
 			</div>
-			<div class="site-header__menu-icon">
+			<div id="menu-icon" class="site-header__menu-icon">
 				<div class="site-header__menu-icon__middle"></div>
 			</div>
-			<div class="site-header__menu-content">	
-				<nav class="primary-nav primary-nav--pull-right">
+			<div id="menu-content" class="site-header__menu-content">	
+				<nav class="primary-nav">
 					<ul>
-						<li><a href="index.php">Home</a></li>
-						<li><a href="#about-us">About Us</a></li>
-						<li><a href="#services">Services</a></li>
-						<li><a href="testimonies.html">Testimonies</a></li>
-						<li><a href="track.php">Track Parcel</a></li>
-						<li><a href="contact.php">Contact Us</a></li>
+						<li>
+							<a href="#about-us">About Us
+								<div class="site-header__link-hover"></div>
+							</a>
+						</li>
+						<li>
+							<a href="#services">Services
+								<div class="site-header__link-hover"></div>
+							</a>
+						</li>
+						<li>
+							<a href="testimonies.html">Testimonies
+								<div class="site-header__link-hover"></div>
+							</a>
+						</li>
+						<li>
+							<a href="track.php">Track Parcel
+								<div class="site-header__link-hover"></div>
+							</a>
+						</li>
+						<li><a href="contact.php">ContactUs
+							<div class="site-header__link-hover"></div>
+							</a>
+						</li>
 					</ul>
 				</nav>
 			</div>
 		</div>
 	</header>
-	<div class="hero">
+	<div id="mobile-menu" class="mobile-menu">
+		<div class="mobile-menu__container">
+			<div class="mobile-menu__content">
+				<div class="mobile-menu__logo">
+					<a href="index.php">
+						<img class=""src="./assets/images/qscs--secondary.png">
+					</a>
+				</div>
+				<div class="mobile-menu__text">
+					<ul>
+						<li><a href="">About Us</a></li>
+						<li><a href="">Services</a></li>
+						<li><a href="">Testimonies</a></li>
+						<li><a href="">Track Parcel</a></li>
+						<li><a href="">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="mobile-menu__close">
+				<i id="x-close" class="fas fa-times"></i>
+			</div>
+		</div>
+	</div>
+	<section class="hero">
 		<img class="hero__bg-image" src="./assets/images/hero-image.png">
-		<section class="hero__content">
-			<div class="wrapper">
-				<div class="row">
-					<div class="row__col-sm-6">
-						<div class="hero__left">
-							<h1 class="hero__site-title">Send Quick Courier Services</h1>
-							<p class="hero__site-description">We specialize in delivering different types of items worldwide; ranging from parcels, golds, documents e.t.c through Air, Land and Sea.</p>
+		<div class="hero__content">
+			<div class="row row--gutter row--wrapper">
+				<div class="row__col-sm-6 sec--blo-m-b">
+					<div class="hero__left">
+						<h1 class="hero__site-title">Send Quick Courier Services</h1>
+						<p class="hero__site-description">We specialize in delivering different types of items worldwide; ranging from parcels, golds, documents e.t.c through Air, Land and Sea.</p>
+						<div class="hero__left-btn">
+							<a href="" class="btn btn--secondary">Track Parcel</a>
+						</div>
+						<div id="sure" class="hero__sure &__Aff--show">
+							<div class="hero__Aff">
+								<p>Affordable</p>
+							</div>
+							<div class="hero__Rel">
+								<p >Reliable</p>	
+							</div>
+							<div class="hero__Acc">
+								<p >Acessible</p>
+							</div>
 						</div>
 					</div>
-					<div class="row__col-sm-6">
-						<div class="hero-content__left"></div>
+				</div>
+				<div class="row__col-sm-6">
+					<div class="hero__form">
+						<div class="hero__form-header">
+							<h2>Get an instant price quote!</h2>
+							<p>It's fast and easy - no obligations.</p>
+						</div>
+						<div class="form">
+							<form class="form__form">
+								<div class="form__group form__group--block">
+									<label>From Country</label>
+									<select id="">
+										<option value="Select">Select</option>
+										<option value="Algeria">Algeria</option>
+										<option value="Argentina">Argentina</option>
+										<option value="Nigeria">Nigeria</option>
+										<option value="United State">United State</option>
+									</select>
+								</div>
+								<div class="form__group form__group--block">
+									<label>From Country</label>
+									<select id="">
+										<option value="Select">Select</option>
+										<option value="Algeria">Algeria</option>
+										<option value="Argentina">Argentina</option>
+										<option value="Nigeria">Nigeria</option>
+										<option value="United State">United State</option>
+									</select>
+								</div>
+								<div class="form__group form__group--block">
+									<label>Urgency</label>
+									<select id="">
+										<option value="Select">Select</option>
+										<option value="Algeria">Express</option>
+										<option value="Argentina">Normal</option>
+									</select>
+								</div>
+								<div class="form__group form__group--block">
+									<label>Freight Type</label>
+									<select id="">
+										<option value="Select">Select</option>
+										<option value="Algeria">Air</option>
+										<option value="Argentina">Sea</option>
+										<option value="Nigeria">Land</option>
+									</select>
+								</div>
+								<div class="hero__form-btn">
+									<a href="" class="btn">Get Quote</a>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-	</div>
+		</div>
+	</section>
 	<script src ="temp/scripts/App.js" ></script>
 </body>
 </html>

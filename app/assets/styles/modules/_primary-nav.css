@@ -1,26 +1,19 @@
 .primary-nav{
-	
-	&--pull-right{
-		@mixin atMedium{
-			float: right;
-		}
-		
-	}
-
 	ul{
-		padding: 0;
-		margin: 0;
-		@mixin clearfix;
+		display: flex;
+		margin-right: -18px;
 	}
 
 	li{
 		list-style-type: none;
-		margin-bottom: 4px;
-
 		@mixin atMedium{
-			float: left;
 			padding-right: 18px;
 		}
+		&:hover{
+			div{
+				transform: scale(1);
+			}
+		}	
 	}
 
 	&--dasboard{

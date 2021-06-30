@@ -1,6 +1,6 @@
 import MobileMenu from "./modules/MobileMenu";
-
-//const loginProcess = new LoginProcess();
+import Assure from "./modules/Assure";
+let assure = new Assure();
 let mobileScreen = new MobileMenu();
 
 
