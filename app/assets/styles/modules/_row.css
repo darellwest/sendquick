@@ -1,11 +1,11 @@
 .row{
 	display: block;
 	&--wrapper{
-		padding: 0 5vw;
+		@mixin wrapper;
 	}
 	@mixin atSmall{
 		display: grid;
-		grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+		grid-template-columns: repeat(12, auto);
 		&--gutter{
 			grid-column-gap: 5vw;
 		}
