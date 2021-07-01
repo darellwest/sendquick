@@ -354,6 +354,7 @@ body{
 	background: #EEF0FA;
 	color: #000;
 	overflow-x: hidden;
+	width: 100%;
 }
 
 *{
@@ -441,11 +442,10 @@ option{
 }
 
 .site-header__wrapper{
-    padding: 0 5vw;
+    padding: 0 8%;
 		/*border-bottom: 1px solid cyan;*/
 		display: flex;
   		justify-content: space-between;
-  		width: 100%;
 	}
 
 .site-header__logo{
@@ -687,7 +687,6 @@ option{
 	position: relative;
 	height: 130vh; 
 	width: 100vw;
-	overflow-x: hidden;
 
 }
 
@@ -849,11 +848,13 @@ option{
 
 .row{
 	display: block;
+	overflow-x: hidden;
+	width: 100%;
 
 }
 
 .row--wrapper{
-    padding: 0 5vw;
+    padding: 0 8%;
 	}
 
 @media (min-width: 600px){
@@ -864,7 +865,10 @@ option{
 
 }
 		.row--gutter{
-			grid-column-gap: 5vw;
+			grid-column-gap: 5%;
+		}
+		.row__col-sm-8{
+			grid-column: span 8;
 		}
 		.row__col-sm-6{
 			grid-column: span 6;
@@ -872,6 +876,28 @@ option{
 		.row__col-sm-4{
 			grid-column: span 4;			
 		}
+	}
+
+.row--inner{
+		display: block;
+	}
+
+@media (min-width: 768px){
+
+.row--inner{
+			background: rgba(0,255,255, 0.1);
+			display: grid;
+			grid-template-columns: repeat(12, auto)
+	}
+			.row--inner--gutter{
+				grid-column-gap: 1.5%;
+			}
+			.row--inner__col-lm-8{
+				grid-column: span 8;
+			}
+			.row--inner__col-lm-4{
+				grid-column: span 4;
+			}
 	}
 
 .form{
@@ -919,7 +945,7 @@ option{
 	}
 
 .sec--sec-m-t{
-		margin-top: 16px;
+		margin-top: 90px;
 	}
 
 .sec--sec-p-t-b{
@@ -937,5 +963,23 @@ option{
 
 .sec--blo-p{
 		padding: 10px;
+	}
+
+.about-us__deliveryman-con{
+		width: 100%;
+		height: 100%;
+	}
+
+.about-us__deliveryman{
+		display: block;
+		width: 100%;
+		-o-object-fit: cover;
+		   object-fit: cover;
+		min-height: 100%;
+		overflow-x: hidden;
+	}
+
+.about-us__sign{
+		display: block;
 	}
 

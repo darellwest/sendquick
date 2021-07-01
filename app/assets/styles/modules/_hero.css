@@ -2,7 +2,6 @@
 	position: relative;
 	height: 130vh; 
 	width: 100vw;
-	overflow-x: hidden;
 	@mixin atSmall{
 		height: 100vh; 
 	}

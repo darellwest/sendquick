@@ -1,5 +1,7 @@
 .row{
 	display: block;
+	overflow-x: hidden;
+	width: 100%;
 	&--wrapper{
 		@mixin wrapper;
 	}
@@ -7,13 +9,35 @@
 		display: grid;
 		grid-template-columns: repeat(12, auto);
 		&--gutter{
-			grid-column-gap: 5vw;
+			grid-column-gap: 5%;
+		}
+		&__col-sm-8{
+			grid-column: span 8;
 		}
 		&__col-sm-6{
 			grid-column: span 6;
 		}
 		&__col-sm-4{
 			grid-column: span 4;			
+		}
+	}
+
+
+	&--inner{
+		display: block;
+		@mixin atLMedium{
+			background: rgba($primary, 0.1);
+			display: grid;
+			grid-template-columns: repeat(12, auto);
+			&--gutter{
+				grid-column-gap: 1.5%;
+			}
+			&__col-lm-8{
+				grid-column: span 8;
+			}
+			&__col-lm-4{
+				grid-column: span 4;
+			}
 		}
 	}
 

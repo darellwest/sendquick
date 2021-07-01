@@ -56,7 +56,7 @@
 }
 
 @define-mixin wrapper{
-    padding: 0 5vw;
+    padding: 0 8%;
 }
 
 @define-mixin clearfix{
