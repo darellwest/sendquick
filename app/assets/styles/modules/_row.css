@@ -1,19 +1,52 @@
 .row{
 	display: block;
+	overflow-x: hidden;
+	width: 100%;
 	&--wrapper{
 		@mixin wrapper;
 	}
 	@mixin atSmall{
 		display: grid;
-		grid-template-columns: repeat(12, auto);
+		grid-template-columns: repeat(12, 1fr);
 		&--gutter{
 			grid-column-gap: 5vw;
+		}
+		&__col-sm-8{
+			grid-column: span 8;
 		}
 		&__col-sm-6{
 			grid-column: span 6;
 		}
 		&__col-sm-4{
 			grid-column: span 4;			
+		}
+	}
+
+	@mixin atLMedium{
+		&__col-lm-8{
+				grid-column: span 8;
+		}
+		&__col-lm-4{
+				grid-column: span 4;
+		}
+	}
+
+
+	&--inner{
+		display: block;
+		@mixin atMedium{
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			&--gutter{
+				grid-column-gap: 1.5vw;
+			}
+			&__col-md-8{
+				grid-column: span 8;
+			}
+			&__col-md-4{
+				grid-column: span 4;
+				height: 100%;
+			}
 		}
 	}
 

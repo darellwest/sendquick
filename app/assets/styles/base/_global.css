@@ -4,12 +4,15 @@ body{
 	background: $bgcolor;
 	color: $black;
 	overflow-x: hidden;
+	width: 100%;
 }
 
 *{
 	box-sizing: border-box;
 	font-family: "roboto", sans-serif;
 	letter-spacing: 1px;
+	margin: 0;
+	padding: 0;
 }
 
 
