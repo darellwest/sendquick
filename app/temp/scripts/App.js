@@ -92,8 +92,11 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _modules_Assure__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _modules_ImageFadeIn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 
 
+
+var imageFadeIn = new _modules_ImageFadeIn__WEBPACK_IMPORTED_MODULE_2__["default"]();
 var assure = new _modules_Assure__WEBPACK_IMPORTED_MODULE_1__["default"]();
 var mobileScreen = new _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_0__["default"]();
 
@@ -207,6 +210,59 @@ var Assure = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (Assure);
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var ImageFadeIn = /*#__PURE__*/function () {
+  function ImageFadeIn() {
+    _classCallCheck(this, ImageFadeIn);
+
+    this.deliverMan = document.getElementById("deliver-man");
+    this.count = 0;
+    this.deliArr = ["about-us__deliveryman-con--1", "about-us__deliveryman-con--2", "about-us__deliveryman-con--3", "about-us__deliveryman-con--4", "about-us__deliveryman-con--5", "about-us__deliveryman-con--6", "about-us__deliveryman-con--7"];
+    this.events();
+  }
+
+  _createClass(ImageFadeIn, [{
+    key: "events",
+    value: function events() {
+      if (this.deliverMan) {
+        this.callFadeToggle();
+      }
+    }
+  }, {
+    key: "callFadeToggle",
+    value: function callFadeToggle() {
+      setInterval(this.fadeToggle.bind(this), 4000);
+    }
+  }, {
+    key: "fadeToggle",
+    value: function fadeToggle() {
+      this.deliverMan.classList.add(this.deliArr[this.count]);
+
+      if (this.count > 6) {
+        this.count = 0;
+        this.deliverMan.className = "about-us__deliveryman-con";
+      } else {
+        this.count++;
+      }
+    }
+  }]);
+
+  return ImageFadeIn;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (ImageFadeIn);
 
 /***/ })
 /******/ ]);

@@ -1,0 +1,10 @@
+.generic-text{
+	font-weight: 300;
+	padding-bottom: 22px;
+	font-size: 16px;
+	line-height: 1.4;
+	color: rgba($black, 1);
+	&--light{
+		color: rgba($white, 1);
+	}
+}

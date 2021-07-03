@@ -351,7 +351,7 @@ template {
 
 body{
 	font-family: "roboto", sans-serif;
-	background: #EEF0FA;
+	background: #dfebeb;
 	color: #000;
 	overflow-x: hidden;
 	width: 100%;
@@ -361,6 +361,8 @@ body{
 	box-sizing: border-box;
 	font-family: "roboto", sans-serif;
 	letter-spacing: 1px;
+	margin: 0;
+	padding: 0;
 }
 
 a{
@@ -406,7 +408,7 @@ input{
 }
 
 input[type="text"]:focus{
-	background: #EEF0FA;
+	background: #dfebeb;
 }
 
 input[type="submit"]:hover{
@@ -442,7 +444,7 @@ option{
 }
 
 .site-header__wrapper{
-    padding: 0 8%;
+    padding: 0 8vw;
 		/*border-bottom: 1px solid cyan;*/
 		display: flex;
   		justify-content: space-between;
@@ -614,7 +616,7 @@ option{
 		}
 
 .mobile-menu__content{
-		background: #EEF0FA;
+		background: #dfebeb;
 		display: inline-block;
 		width: 70%;
 		height: 100%;
@@ -661,7 +663,7 @@ option{
 		width: 45px;
 		height: 45px;
 		border-radius: 50%;
-		background: #EEF0FA;
+		background: #dfebeb;
 		display: inline-block;
 	}
 
@@ -786,7 +788,7 @@ option{
 .hero__form{
 		max-width: 100%;
 		border-radius: 10px;
-		background: rgba(238,240,250, 0.7);
+		background: rgba(223,235,235, 0.7);
 		padding: 10px 20px 20px;
 	}
 
@@ -854,18 +856,18 @@ option{
 }
 
 .row--wrapper{
-    padding: 0 8%;
+    padding: 0 8vw;
 	}
 
 @media (min-width: 600px){
 
 .row{
 		display: grid;
-		grid-template-columns: repeat(12, auto)
+		grid-template-columns: repeat(12, 1fr)
 
 }
 		.row--gutter{
-			grid-column-gap: 5%;
+			grid-column-gap: 5vw;
 		}
 		.row__col-sm-8{
 			grid-column: span 8;
@@ -878,25 +880,34 @@ option{
 		}
 	}
 
+@media (min-width: 768px){
+		.row__col-lm-8{
+				grid-column: span 8;
+		}
+		.row__col-lm-4{
+				grid-column: span 4;
+		}
+	}
+
 .row--inner{
 		display: block;
 	}
 
-@media (min-width: 768px){
+@media (min-width: 900px){
 
 .row--inner{
-			background: rgba(0,255,255, 0.1);
 			display: grid;
-			grid-template-columns: repeat(12, auto)
+			grid-template-columns: repeat(12, 1fr)
 	}
 			.row--inner--gutter{
-				grid-column-gap: 1.5%;
+				grid-column-gap: 1.5vw;
 			}
-			.row--inner__col-lm-8{
+			.row--inner__col-md-8{
 				grid-column: span 8;
 			}
-			.row--inner__col-lm-4{
+			.row--inner__col-md-4{
 				grid-column: span 4;
+				height: 100%;
 			}
 	}
 
@@ -949,8 +960,8 @@ option{
 	}
 
 .sec--sec-p-t-b{
-		margin-top: 10px;
-		margin-bottom: 10px;
+		padding-top: 40px;
+		padding-bottom: 40px;
 	}
 
 .sec--blo-m-t{
@@ -965,21 +976,98 @@ option{
 		padding: 10px;
 	}
 
-.about-us__deliveryman-con{
+.about-us__container{
 		width: 100%;
-		height: 100%;
 	}
 
-.about-us__deliveryman{
-		display: block;
-		width: 100%;
-		-o-object-fit: cover;
-		   object-fit: cover;
-		min-height: 100%;
-		overflow-x: hidden;
+.about-us__deliveryman-con{
+		width: 84vw;
+		height: 300px;
+		background-image: url("../../assets/images/deliver.png"); 
+		background-size: cover;
+		background-position: center center; 
+		transition: background-image ease-out 1s;
+	}
+
+.about-us__deliveryman-con--1{
+			background-image: url("../../assets/images/deliver1.jpg"); 
+		}
+
+.about-us__deliveryman-con--2{
+			background-image: url("../../assets/images/deliver2.jpg"); 
+		}
+
+.about-us__deliveryman-con--3{
+			background-image: url("../../assets/images/deliver3.jpg"); 
+		}
+
+.about-us__deliveryman-con--4{
+			background-image: url("../../assets/images/deliver4.jpg"); 
+		}
+
+.about-us__deliveryman-con--5{
+			background-image: url("../../assets/images/deliver5.jpg"); 
+		}
+
+.about-us__deliveryman-con--6{
+			background-image: url("../../assets/images/deliver6.jpg"); 
+		}
+
+.about-us__deliveryman-con--7{
+			background-image: url("../../assets/images/deliver7.jpg"); 
+		}
+
+@media (min-width: 600px){
+
+.about-us__deliveryman-con{
+			width: 100%;
+			height: 100%
+	}
 	}
 
 .about-us__sign{
 		display: block;
 	}
+
+.section-title{
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 1.3;
+	color: rgba(0,0,0, 0.75);
+	padding: 0;
+	margin: 0 0 18px;
+	word-spacing: 1px;
+}
+
+.section-title--light{
+		color: rgba(255,255,255, 1);
+	}
+
+.section-title--center{
+		text-align: center;
+	}
+
+.section-subtitle{
+	font-weight: 600;
+	font-size: 22px;
+	color: rgba(0,0,0, 0.65);
+	margin: 0 0 10px;
+}
+
+.section-subtitle--light{
+		color: rgba(255,255,255, 1);
+	}
+
+.generic-text{
+	font-weight: 300;
+	padding-bottom: 22px;
+	font-size: 16px;
+	line-height: 1.4;
+	color: rgba(0,0,0, 1);
+}
+
+.generic-text--light{
+		color: rgba(255,255,255, 1);
+	}
+
 
