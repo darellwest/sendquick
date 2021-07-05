@@ -974,6 +974,13 @@ option{
 		margin-bottom: 25px;
 	}
 
+@media (min-width: 600px){
+
+.sec--blo-m-b{
+			margin-bottom: 0
+	}
+	}
+
 .sec--blo-p{
 		padding: 15px;
 	}
