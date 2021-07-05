@@ -1,0 +1,26 @@
+.our-services{
+	width: 100%;
+
+	&--each{
+		opacity: 0.1;
+		transform: scale(0, 0);
+		transform-origin: 50% 50%;
+		transition: all .4s ease-out;
+		box-shadow: 10px 5px 10px rgba($black, 0.1);
+	}
+
+	&__plane{
+		width: 100%;
+	}
+	&__plane-pix{
+		img{
+			display: block;
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__plane-content{
+		background: rgba($white, 1);
+	}
+}

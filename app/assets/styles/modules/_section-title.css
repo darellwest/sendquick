@@ -6,6 +6,7 @@
 	padding: 0;
 	margin: 0 0 18px;
 	word-spacing: 1px;
+	text-transform: uppercase;
 
 	&--light{
 		color: rgba($white, 1);

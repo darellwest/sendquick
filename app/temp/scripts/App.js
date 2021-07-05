@@ -93,9 +93,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _modules_Assure__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _modules_ImageFadeIn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _modules_ZoomOutOnScroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 
 
 
+
+var zoomOutOnScroll = new _modules_ZoomOutOnScroll__WEBPACK_IMPORTED_MODULE_3__["default"]("our-services", "our-services--each", "home");
 var imageFadeIn = new _modules_ImageFadeIn__WEBPACK_IMPORTED_MODULE_2__["default"]();
 var assure = new _modules_Assure__WEBPACK_IMPORTED_MODULE_1__["default"]();
 var mobileScreen = new _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_0__["default"]();
@@ -263,6 +266,65 @@ var ImageFadeIn = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (ImageFadeIn);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var ZoomOutOnScroll = /*#__PURE__*/function () {
+  function ZoomOutOnScroll(theSectionId, eachElementclassName, bodyId) {
+    _classCallCheck(this, ZoomOutOnScroll);
+
+    this.elementSection = document.getElementById(theSectionId);
+    this.body = document.getElementById(bodyId);
+    this.allElements = document.getElementsByClassName(eachElementclassName);
+    this.allElementsLength = this.allElements.length;
+    this.windowContentAreaHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    this.counter = "";
+    this.events();
+  }
+
+  _createClass(ZoomOutOnScroll, [{
+    key: "events",
+    value: function events() {
+      this.body.onscroll = this.zoomElementOut.bind(this);
+    }
+  }, {
+    key: "zoomElementOut",
+    value: function zoomElementOut(e) {
+      for (this.counter = 0; this.counter < this.allElementsLength; this.counter++) {
+        var topWindowToElementBottom = void 0,
+            elementHeight = void 0,
+            pointToReveal = void 0,
+            presentElement = void 0,
+            isClass = void 0;
+        presentElement = this.allElements[this.counter];
+        isClass = !this.allElements[this.counter].classList.contains("zoom-out");
+        topWindowToElementBottom = this.allElements[this.counter].getBoundingClientRect().bottom;
+        elementHeight = this.allElements[this.counter].getBoundingClientRect().height;
+        pointToReveal = topWindowToElementBottom - elementHeight / 5;
+
+        if (this.windowContentAreaHeight > pointToReveal) {
+          if (isClass) {
+            presentElement.classList.add("zoom-out");
+          }
+        }
+      }
+    }
+  }]);
+
+  return ZoomOutOnScroll;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (ZoomOutOnScroll);
 
 /***/ })
 /******/ ]);
