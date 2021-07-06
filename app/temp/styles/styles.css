@@ -349,7 +349,7 @@ template {
   display: none;
 }
 
-/*$dorminant: #034040;*/
+/*$bgcolor:#EEF0FA;*/
 
 body{
 	font-family: "roboto", sans-serif;
@@ -357,6 +357,7 @@ body{
 	color: #000;
 	overflow-x: hidden;
 	width: 100%;
+	overflow-y: scroll;
 }
 
 *{
@@ -939,6 +940,13 @@ option{
 			text-transform: uppercase;
 		}
 
+.form__input-grow{
+		transform: scaleX(0);
+		opacity: 0.5;
+		transform-origin: 0;
+		transition: all .6s ease-out;
+	}
+
 .btn{
 	display: block;
 	width: 100%;
@@ -1115,6 +1123,42 @@ option{
 .our-services__plane-content{
 		background: rgba(255,255,255, 1);
 	}
+
+.track-parcel{
+	width: 100%;
+	background-image: url("../../assets/images/map.png");
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+	margin-bottom: 600px;
+}
+
+.track-parcel__container{
+		width: 84%;
+		margin: 0 auto;
+	}
+
+@media (min-width: 600px){
+
+.track-parcel__container{
+			width: 50%;
+	}
+	}
+
+.track-parcel label{
+		color: #fff;
+	}
+
+.track-parcel__btn{
+
+	}
+
+.grow-right{
+	opacity: 1;
+	transform: scaleX(1);
+}
 
 .zoom-out{
 	opacity: 1;
