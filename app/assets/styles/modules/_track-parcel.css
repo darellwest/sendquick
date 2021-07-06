@@ -1,0 +1,23 @@
+.track-parcel{
+	width: 100%;
+	background-image: url("../../assets/images/map.png");
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+	margin-bottom: 600px;
+	&__container{
+		width: 84%;
+		@mixin atSmall{
+			width: 50%;
+		}
+		margin: 0 auto;
+	}
+	label{
+		color: $white;
+	}
+	&__btn{
+
+	}
+}
