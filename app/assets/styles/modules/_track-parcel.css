@@ -5,8 +5,6 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-
-	margin-bottom: 600px;
 	&__container{
 		width: 84%;
 		@mixin atSmall{
