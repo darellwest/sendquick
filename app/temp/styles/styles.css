@@ -351,6 +351,10 @@ template {
 
 /*$bgcolor:#EEF0FA;*/
 
+/*$bgcolor:#ddd;*/
+
+/*$bgcolor:#fff; */
+
 body{
 	font-family: "roboto", sans-serif;
 	background: #dfebeb;
@@ -1075,6 +1079,7 @@ option{
 	font-size: 22px;
 	color: rgba(0,0,0, 0.65);
 	margin: 0 0 10px;
+	text-transform:capitalize;
 }
 
 .section-subtitle--light{
@@ -1152,6 +1157,27 @@ option{
 .track-parcel__btn{
 
 	}
+
+.slide-carousel{
+	width: 84%;
+	margin: 0 auto;
+}
+
+.slide-carousel__container{
+		overflow-x: hidden;
+		display: flex;
+		max-width: 100%;
+	}
+
+.slide-carousel__block{
+		min-width: 25%;
+	}
+
+.slide-carousel__block img{
+			margin: 0 auto;
+			display: block;
+			max-width: 100%;
+		}
 
 .grow-right{
 	opacity: 1;

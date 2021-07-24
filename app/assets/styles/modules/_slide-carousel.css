@@ -1,0 +1,17 @@
+.slide-carousel{
+	width: 84%;
+	margin: 0 auto;
+	&__container{
+		overflow-x: hidden;
+		display: flex;
+		max-width: 100%;
+	}
+	&__block{
+		min-width: 25%;
+		img{
+			margin: 0 auto;
+			display: block;
+			max-width: 100%;
+		}
+	}
+}

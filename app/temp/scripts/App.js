@@ -95,11 +95,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_ImageFadeIn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _modules_ZoomOutOnScroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _modules_GrowRightOnScroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _modules_SlideCarousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 
 
 
 
 
+
+var slideCarousel = new _modules_SlideCarousel__WEBPACK_IMPORTED_MODULE_5__["default"]("slide-carousel__block--1");
 var growRightOnScroll = new _modules_GrowRightOnScroll__WEBPACK_IMPORTED_MODULE_4__["default"]("form__input-grow", "home");
 var zoomOutOnScroll = new _modules_ZoomOutOnScroll__WEBPACK_IMPORTED_MODULE_3__["default"]("our-services--each", "home");
 var imageFadeIn = new _modules_ImageFadeIn__WEBPACK_IMPORTED_MODULE_2__["default"]();
@@ -137,7 +140,8 @@ var MobileMenu = /*#__PURE__*/function () {
     }
   }, {
     key: "openMobileMenu",
-    value: function openMobileMenu() {
+    value: function openMobileMenu(e) {
+      console.log(e);
       this.phoneMenu.classList.add("mobile-menu--show");
     }
   }, {
@@ -386,6 +390,43 @@ var GrowRightOnScroll = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (GrowRightOnScroll);
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var SlideCarousel = /*#__PURE__*/function () {
+  function SlideCarousel(carouselblockclassnum) {
+    _classCallCheck(this, SlideCarousel);
+
+    this.carouselBlocks = document.getElementsByClassName(carouselblockclassnum);
+    this.events();
+  }
+
+  _createClass(SlideCarousel, [{
+    key: "events",
+    value: function events() {
+      if (this.carouselBlocks) {
+        setInterval(this.slider.bind(this), 1300);
+      }
+    }
+  }, {
+    key: "slider",
+    value: function slider() {}
+  }]);
+
+  return SlideCarousel;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (SlideCarousel);
 
 /***/ })
 /******/ ]);
