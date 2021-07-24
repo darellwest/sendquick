@@ -12,7 +12,8 @@ class MobileMenu{
 		this.menuClose.addEventListener("click", this.closeMobileMenu.bind(this));
 	}
 
-	openMobileMenu(){
+	openMobileMenu(e){
+		console.log(e);
 		this.phoneMenu.classList.add("mobile-menu--show");
 	}
 
