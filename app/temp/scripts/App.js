@@ -102,7 +102,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var slideCarousel = new _modules_SlideCarousel__WEBPACK_IMPORTED_MODULE_5__["default"]("slide-carousel__block--1");
+var slideCarousel = new _modules_SlideCarousel__WEBPACK_IMPORTED_MODULE_5__["default"]("slide-carousel__item", "carouselContainer");
 var growRightOnScroll = new _modules_GrowRightOnScroll__WEBPACK_IMPORTED_MODULE_4__["default"]("form__input-grow", "home");
 var zoomOutOnScroll = new _modules_ZoomOutOnScroll__WEBPACK_IMPORTED_MODULE_3__["default"]("our-services--each", "home");
 var imageFadeIn = new _modules_ImageFadeIn__WEBPACK_IMPORTED_MODULE_2__["default"]();
@@ -404,23 +404,80 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var SlideCarousel = /*#__PURE__*/function () {
-  function SlideCarousel(carouselblockclassnum) {
+  function SlideCarousel(carouselsubitemclassname, carouselContainerId) {
     _classCallCheck(this, SlideCarousel);
 
-    this.carouselBlocks = document.getElementsByClassName(carouselblockclassnum);
+    this.carouselContainer = document.getElementById(carouselContainerId);
+    this.items = document.getElementsByClassName(carouselsubitemclassname);
+    this.itemsLen = this.items.length;
+    this.itemsLastIndex = this.itemsLen - 1;
+    this.activeTrans = [];
+    this.itemInView = this.items[0];
+    this.itemInViewPos = "";
+    this.itemInViewNext = "";
+    this.itemInViewNextPos = "";
+    this.itemInViewPrev = "";
     this.events();
   }
 
   _createClass(SlideCarousel, [{
     key: "events",
     value: function events() {
-      if (this.carouselBlocks) {
-        setInterval(this.slider.bind(this), 1300);
+      this.computInitialTrans();
+      this.initiateSlider();
+    }
+  }, {
+    key: "computInitialTrans",
+    value: function computInitialTrans() {
+      var counter, initial;
+      initial = 0;
+
+      for (counter = 0; counter < this.itemsLen; counter++) {
+        if (counter > 1) {
+          initial -= 100;
+          this.items[counter].style.transform = "translateX(" + initial + "%" + ")";
+        }
+
+        this.activeTrans.push(initial);
       }
     }
   }, {
+    key: "initiateSlider",
+    value: function initiateSlider() {
+      setInterval(this.slider.bind(this), 1500);
+    }
+  }, {
     key: "slider",
-    value: function slider() {}
+    value: function slider() {
+      this.itemInViewPos = this.itemInView.dataset.pos;
+      this.activeTrans[this.itemInViewPos] -= 100;
+      this.itemInView.style.transform = "translateX(" + this.activeTrans[this.itemInViewPos] + "%" + ")";
+      this.itemInViewPrev = this.itemInView;
+      this.itemInViewPrev.dataset.side = "left";
+      this.itemInViewNextPos = parseInt(this.itemInViewPos) + 1;
+
+      if (this.itemInViewNextPos > this.itemsLastIndex) {
+        this.itemInViewNextPos = 0;
+        this.itemInViewNext = this.items[this.itemInViewNextPos];
+        this.activeTrans[this.itemInViewNextPos] = 100;
+        this.itemInViewNext.style.transform = "translateX(" + this.activeTrans[this.itemInViewNextPos] + "%" + ")";
+        this.itemInViewNext.dataset.side = "right";
+      } // console.log(this.itemInViewNextPos);
+
+
+      this.itemInViewNext = this.items[this.itemInViewNextPos];
+
+      if (this.itemInViewNext.dataset.side == "left") {
+        this.activeTrans[this.itemInViewNextPos] += 200;
+        this.itemInViewNext.style.transform = "translateX(" + this.activeTrans[this.itemInViewNextPos] + "%" + ")";
+        this.itemInViewNext.dataset.side = "right";
+      }
+
+      this.activeTrans[this.itemInViewNextPos] -= 100;
+      this.itemInViewNext.style.transform = "translateX(" + this.activeTrans[this.itemInViewNextPos] + "%" + ")";
+      this.itemInViewNext.dataset.side = "middle";
+      this.itemInView = this.itemInViewNext;
+    }
   }]);
 
   return SlideCarousel;

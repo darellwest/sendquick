@@ -1160,21 +1160,29 @@ option{
 
 .slide-carousel{
 	width: 84%;
-	margin: 0 auto;
+	margin: 0 auto 100px;
 }
 
 .slide-carousel__container{
 		overflow-x: hidden;
 		display: flex;
-		max-width: 100%;
+		width: 100%;
 	}
 
-.slide-carousel__block{
-		min-width: 25%;
+.slide-carousel__item{
+		display: flex;
+		min-width: 100%;
+		position: relative;
 	}
 
-.slide-carousel__block img{
-			margin: 0 auto;
+.slide-carousel__sub-item{
+		width: 25%;
+		align-content: center;
+	}
+
+.slide-carousel__sub-item img{
+			margin-right: auto;
+			margin-left: auto; 
 			display: block;
 			max-width: 100%;
 		}
