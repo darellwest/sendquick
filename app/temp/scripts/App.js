@@ -408,10 +408,13 @@ var SlideCarousel = /*#__PURE__*/function () {
     _classCallCheck(this, SlideCarousel);
 
     this.carouselContainer = document.getElementById(carouselContainerId);
+    this.containerRight = this.carouselContainer.getBoundingClientRect().right;
+    this.anyRight = true;
+    this.checkIf = true;
+    this.addOne = 0;
     this.items = document.getElementsByClassName(carouselsubitemclassname);
     this.itemsLen = this.items.length;
     this.itemsLastIndex = this.itemsLen - 1;
-    this.activeTrans = [];
     this.itemInView = this.items[0];
     this.itemInViewPos = "";
     this.itemInViewNext = "";
@@ -423,60 +426,52 @@ var SlideCarousel = /*#__PURE__*/function () {
   _createClass(SlideCarousel, [{
     key: "events",
     value: function events() {
-      this.computInitialTrans();
       this.initiateSlider();
-    }
-  }, {
-    key: "computInitialTrans",
-    value: function computInitialTrans() {
-      var counter, initial;
-      initial = 0;
-
-      for (counter = 0; counter < this.itemsLen; counter++) {
-        if (counter > 1) {
-          initial -= 100;
-          this.items[counter].style.transform = "translateX(" + initial + "%" + ")";
-        }
-
-        this.activeTrans.push(initial);
-      }
     }
   }, {
     key: "initiateSlider",
     value: function initiateSlider() {
-      setInterval(this.slider.bind(this), 1500);
+      setInterval(this.slider.bind(this), 4000);
     }
   }, {
     key: "slider",
     value: function slider() {
       this.itemInViewPos = this.itemInView.dataset.pos;
-      this.activeTrans[this.itemInViewPos] -= 100;
-      this.itemInView.style.transform = "translateX(" + this.activeTrans[this.itemInViewPos] + "%" + ")";
+      this.itemInView.classList.add("slide-carousel__item--left");
       this.itemInViewPrev = this.itemInView;
-      this.itemInViewPrev.dataset.side = "left";
       this.itemInViewNextPos = parseInt(this.itemInViewPos) + 1;
+      this.itemInViewNext = this.items[this.itemInViewNextPos];
 
       if (this.itemInViewNextPos > this.itemsLastIndex) {
         this.itemInViewNextPos = 0;
-        this.itemInViewNext = this.items[this.itemInViewNextPos];
-        this.activeTrans[this.itemInViewNextPos] = 100;
-        this.itemInViewNext.style.transform = "translateX(" + this.activeTrans[this.itemInViewNextPos] + "%" + ")";
-        this.itemInViewNext.dataset.side = "right";
-      } // console.log(this.itemInViewNextPos);
-
-
-      this.itemInViewNext = this.items[this.itemInViewNextPos];
-
-      if (this.itemInViewNext.dataset.side == "left") {
-        this.activeTrans[this.itemInViewNextPos] += 200;
-        this.itemInViewNext.style.transform = "translateX(" + this.activeTrans[this.itemInViewNextPos] + "%" + ")";
-        this.itemInViewNext.dataset.side = "right";
       }
 
-      this.activeTrans[this.itemInViewNextPos] -= 100;
-      this.itemInViewNext.style.transform = "translateX(" + this.activeTrans[this.itemInViewNextPos] + "%" + ")";
-      this.itemInViewNext.dataset.side = "middle";
+      this.itemInViewNext = this.items[this.itemInViewNextPos];
+      this.itemInViewNext.style.opacity = "1";
+      this.itemInViewNext.classList.remove("slide-carousel__item--middle");
+      this.itemInViewNext.classList.remove("slide-carousel__item--left");
+      this.itemInViewNext.classList.add("slide-carousel__item--middle");
       this.itemInView = this.itemInViewNext;
+
+      if (this.itemInViewNextPos == this.itemsLastIndex && this.checkIf) {
+        this.checkIf = false;
+        this.anyRight = false;
+      }
+
+      if (!this.anyRight) {
+        if (this.itemInViewNextPos == this.itemsLastIndex) {
+          this.items[0].style.opacity = "0";
+          this.items[0].classList.remove("slide-carousel__item--middle");
+          this.items[0].classList.remove("slide-carousel__item--left");
+          this.items[0].classList.add("slide-carousel__item--right");
+        } else {
+          this.addOne = this.items[this.itemInViewNextPos + 1];
+          this.addOne.style.opacity = "0";
+          this.addOne.classList.remove("slide-carousel__item--middle");
+          this.addOne.classList.remove("slide-carousel__item--left");
+          this.addOne.classList.add("slide-carousel__item--right");
+        }
+      }
     }
   }]);
 
