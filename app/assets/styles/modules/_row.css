@@ -8,6 +8,7 @@
 	@mixin atSmall{
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: auto auto auto auto auto auto;
 		&--gutter{
 			grid-column-gap: 5vw;
 		}
@@ -20,6 +21,9 @@
 		&__col-sm-4{
 			grid-column: span 4;			
 		}
+		&__col-sm-3{
+			grid-column: span 3;			
+		}
 	}
 
 	@mixin atLMedium{
@@ -31,6 +35,11 @@
 		}
 	}
 
+	@mixin atMedium{
+		&__col-md-3{
+				grid-column: span 3;
+		}
+	}
 
 	&--inner{
 		display: block;

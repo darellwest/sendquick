@@ -1,0 +1,8 @@
+.reviews{
+	&__text{
+		font-style: italic;
+	}
+	&__body{
+		margin-top: 10px;
+	}
+}

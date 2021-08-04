@@ -870,7 +870,8 @@ option{
 
 .row{
 		display: grid;
-		grid-template-columns: repeat(12, 1fr)
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: auto auto auto auto auto auto
 
 }
 		.row--gutter{
@@ -885,6 +886,9 @@ option{
 		.row__col-sm-4{
 			grid-column: span 4;			
 		}
+		.row__col-sm-3{
+			grid-column: span 3;			
+		}
 	}
 
 @media (min-width: 768px){
@@ -893,6 +897,12 @@ option{
 		}
 		.row__col-lm-4{
 				grid-column: span 4;
+		}
+	}
+
+@media (min-width: 900px){
+		.row__col-md-3{
+				grid-column: span 3;
 		}
 	}
 
@@ -1203,6 +1213,25 @@ option{
 
 .slide-carousel__item--left{
 		left: -100%;
+	}
+
+.reviews__text{
+		font-style: italic;
+	}
+
+.reviews__body{
+		margin-top: 10px;
+	}
+
+.star-rating{
+	display: flex;
+	width: 170px;
+	justify-content: space-between;
+}
+
+.star-rating .fa-star{
+		color: #FFAE02;
+		font-size: 21px;
 	}
 
 .grow-right{
