@@ -1177,7 +1177,7 @@ option{
 		display: flex;
 		width: 100%;
 		position: absolute;
-		transition: transform ease-out 1s;
+		transition: left 1s ease-out;
 	}
 
 .slide-carousel__sub-item{
@@ -1194,17 +1194,15 @@ option{
 
 .slide-carousel__item--right{
 		left: 100%;
-		transition: left 1s ease-out;
+		
 	}
 
 .slide-carousel__item--middle{
 		left: 0;
-		transition: left 1s ease-out;
 	}
 
 .slide-carousel__item--left{
 		left: -100%;
-		transition: left 1s ease-out;
 	}
 
 .grow-right{

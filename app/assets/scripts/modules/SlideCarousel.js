@@ -37,10 +37,10 @@ class SlideCarousel{
 			this.itemInViewNextPos = 0;
 		}
 
+		
 		this.itemInViewNext = this.items[this.itemInViewNextPos];
 		this.itemInViewNext.style.opacity = "1";
-		this.itemInViewNext.classList.remove("slide-carousel__item--middle");
-		this.itemInViewNext.classList.remove("slide-carousel__item--left");
+		this.itemInViewNext.classList.remove("slide-carousel__item--middle", "slide-carousel__item--left");
 		this.itemInViewNext.classList.add("slide-carousel__item--middle");
 		this.itemInView = this.itemInViewNext;	
 
@@ -50,17 +50,14 @@ class SlideCarousel{
 		}
 
 		if(!this.anyRight){
-
 			if(this.itemInViewNextPos == this.itemsLastIndex){
 				this.items[0].style.opacity = "0"; 
-				this.items[0].classList.remove("slide-carousel__item--middle");
-				this.items[0].classList.remove("slide-carousel__item--left");
+				this.items[0].classList.remove("slide-carousel__item--middle", "slide-carousel__item--left");
 				this.items[0].classList.add("slide-carousel__item--right");
 			}else{
 				this.addOne = this.items[this.itemInViewNextPos + 1];
 				this.addOne.style.opacity = "0"; 
-				this.addOne.classList.remove("slide-carousel__item--middle");
-				this.addOne.classList.remove("slide-carousel__item--left");
+				this.addOne.classList.remove("slide-carousel__item--middle", "slide-carousel__item--left");
 				this.addOne.classList.add("slide-carousel__item--right");
 			}	
 		}	

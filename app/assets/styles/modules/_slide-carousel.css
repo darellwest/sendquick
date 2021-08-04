@@ -13,7 +13,7 @@
 		display: flex;
 		width: 100%;
 		position: absolute;
-		transition: transform ease-out 1s;
+		transition: left 1s ease-out;
 	}
 	&__sub-item{
 		width: 25%;
@@ -28,15 +28,13 @@
 
 	&__item--right{
 		left: 100%;
-		transition: left 1s ease-out;
+		
 	}
 	&__item--middle{
 		left: 0;
-		transition: left 1s ease-out;
 	}
 	&__item--left{
 		left: -100%;
-		transition: left 1s ease-out;
 	}
 	
 }
