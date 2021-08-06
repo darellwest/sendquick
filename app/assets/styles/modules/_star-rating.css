@@ -1,0 +1,9 @@
+.star-rating{
+	display: flex;
+	width: 150px;
+	justify-content: space-between;
+	.fa-star{
+		color: #FFAE02;
+		font-size: 18px;
+	}
+}

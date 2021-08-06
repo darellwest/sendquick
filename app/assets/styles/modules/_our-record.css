@@ -1,0 +1,50 @@
+.our-record{
+	position: relative;
+	overflow: hidden;
+
+	&__image{
+		display: block;
+		max-width: 100%;
+		height: auto;
+		&:hover{
+			cursor:pointer;
+		}
+	}
+
+	&__content{
+		text-align: center;
+		color: $white;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		padding-left: 10px;
+		padding-right: 10px;
+		transform: translate(-50%, -50%);
+		margin-bottom: -30px;
+		&:hover{
+			cursor:pointer;
+		}
+
+		& > div{
+			margin-bottom: 30px;
+			width: 300px;
+		}
+	}
+
+	.fa-tree, .fa-thumbs-up, .fa-globe, .fa-tape{
+		font-size: 56px;
+		display: inline-block;
+		color: $primary;
+		&:hover{
+			color: $secondary;
+		}
+	}
+
+	&__digit{
+		font-size: 64px;
+	}
+
+	&__name{
+		font-size: 22px;
+	}
+}
