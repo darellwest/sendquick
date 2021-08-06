@@ -101,6 +101,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // import MoveInOnHover from "./modules/MoveInOnHover";
+// let moveInOnHover  = new MoveInOnHover();
 
 var slideCarousel = new _modules_SlideCarousel__WEBPACK_IMPORTED_MODULE_5__["default"]("slide-carousel__item", "carouselContainer");
 var growRightOnScroll = new _modules_GrowRightOnScroll__WEBPACK_IMPORTED_MODULE_4__["default"]("form__input-grow", "home");

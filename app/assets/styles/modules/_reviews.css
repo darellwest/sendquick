@@ -1,4 +1,11 @@
 .reviews{
+	background: rgba($dorminant, 1);
+	*{
+		color: white;
+	}
+	&__name{
+		font-weight: 200;
+	}
 	&__text{
 		font-style: italic;
 	}
