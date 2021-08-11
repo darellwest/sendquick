@@ -1323,6 +1323,70 @@ option{
 		font-size: 22px;
 	}
 
+.our-office{
+	padding-left: 8vw;
+	padding-right: 5vw;
+	padding-top: 90px;
+	padding-bottom: 90px;
+}
+
+.our-office__details{
+		padding-top: 60px;
+		display: block;
+		justify-content: space-between;
+	}
+
+@media (min-width: 1200px){
+
+.our-office__details{
+			display: flex
+	}
+	}
+
+.our-office__details--left{
+		margin-bottom: 50px;
+	}
+
+@media (min-width: 1200px){
+
+.our-office__details--left{
+			margin-bottom: 0
+	}
+	}
+
+.our-office__block{
+		display: flex;
+	}
+
+.our-office__block--ma-b{
+			margin-bottom: 50px;
+		}
+
+.our-office__icon{
+		margin-right: 20px;
+	}
+
+.our-office__details-title{
+		font-weight: 500;
+	}
+
+.our-office .fa-map-marker-alt, .our-office .fa-mobile-alt, .our-office .fa-clock, .our-office .fa-envelope-open{
+		font-size: 56px;
+		display: inline-block;
+		color: #00FFFF;
+	}
+
+.our-office .fa-map-marker-alt:hover,.our-office .fa-mobile-alt:hover,.our-office .fa-clock:hover,.our-office .fa-envelope-open:hover{
+			color: #FF0000;
+			cursor: pointer;
+		}
+
+.our-office .mymap{
+		width: 100%;
+		height: 700px;
+		display: none;
+	}
+
 .grow-right{
 	opacity: 1;
 	transform: scaleX(1);
