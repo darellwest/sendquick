@@ -1,0 +1,104 @@
+.footer{
+	padding-bottom: 50px;
+	background: rgba($black, 1);
+	&__hr{
+		width: 50px;
+		height: 1.5px;
+		margin-top: -13px;
+		margin-bottom: 8px;
+		background: $primary;
+	}
+	&__icons{
+		margin-top: -12px;
+	}
+	&__icons-container{
+		display: flex;
+		width: 200px;
+		justify-content: space-between;
+		& > div{
+			position: relative;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: $white;
+			&:hover{
+				cursor:pointer;
+				.footer__animated-bg{
+					transform: scale(0);
+				}
+			}
+		}
+	}
+	&__animated-bg{
+		width: 50px;
+		height: 50px;
+		margin: 5px auto;
+		border-radius: 50%;
+		background: $primary;
+		transform: scale(1);
+		transform-origin: 50% 50%;
+		transition: transform .4s ease-out;
+	}
+	.fa-facebook-f, .fa-twitter, .fa-youtube{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 20px;
+	}
+	&__about-us{
+		margin-bottom: 50px;
+		@mixin atMedium{
+			margin-bottom:auto;
+		}
+	}
+	&__truck-container{
+		margin-bottom: -30px;
+		@mixin atMedium{
+			margin-bottom:auto;
+		}
+	}
+	&__trucks-image{
+		display: block;
+	}
+	&__categ{
+		margin-bottom: 50px;
+		@mixin atSmall{
+			margin-bottom:auto;
+		}
+	}
+	&__pc-list{
+		padding-top: 15px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid rgba($white, 0.5);
+		p{
+			color: rgba($white, 0.5);
+			&:hover{
+				cursor: pointer;
+				color:rgba($primary, 1);
+			}
+		}
+	}
+	&__number{
+		font-size: 32px;
+		color: $white;
+		font-weight: bold;
+	}
+	&__call{
+		color: $white;
+		font-size: 21px;
+		font-weight: bold;
+	}
+	&__newsletterhead{
+		margin-top: 40px;
+	}
+	&__love-quote{
+		color: $white;
+		display: block;
+		text-align: center;
+		font-size: 12px;
+		.fa-heart{
+			color: $secondary;
+		}
+	}
+}

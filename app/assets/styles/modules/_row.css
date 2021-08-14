@@ -41,6 +41,12 @@
 		}
 	}
 
+	@mixin atLLarge{
+		&__col-lg-3{
+				grid-column: span 3;
+		}
+	}
+
 	&--inner{
 		display: block;
 		@mixin atMedium{
