@@ -906,6 +906,12 @@ option{
 		}
 	}
 
+@media (min-width: 1200px){
+		.row__col-lg-3{
+				grid-column: span 3;
+		}
+	}
+
 .row--inner{
 		display: block;
 	}
@@ -960,6 +966,29 @@ option{
 		transform-origin: 0;
 		transition: all .6s ease-out;
 	}
+
+.form__newsletter div{
+			width: 100%;
+		}
+
+.form__newsletter div, .form__newsletter input{
+			background: rgba(255,255,255, 0.3);
+			color: #fff;
+		}
+
+.form__newsletter input, .form__newsletter .fa-paper-plane{
+			display: inline-block;
+		}
+
+.form__newsletter input{
+			width: 80%;
+		}
+
+.form__newsletter .fa-paper-plane{
+			margin-left: 13px;
+			color: #FF0000;
+			cursor: pointer;
+		}
 
 .btn{
 	display: block;
@@ -1386,6 +1415,143 @@ option{
 		height: 700px;
 		display: none;
 	}
+
+.footer{
+	padding-bottom: 50px;
+	background: rgba(0,0,0, 1);
+}
+
+.footer__hr{
+		width: 50px;
+		height: 1.5px;
+		margin-top: -13px;
+		margin-bottom: 8px;
+		background: #00FFFF;
+	}
+
+.footer__icons{
+		margin-top: -12px;
+	}
+
+.footer__icons-container{
+		display: flex;
+		width: 200px;
+		justify-content: space-between;
+	}
+
+.footer__icons-container > div{
+			position: relative;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: #fff;
+		}
+
+.footer__icons-container > div:hover{
+				cursor:pointer;
+			}
+
+.footer__icons-container > div:hover .footer__animated-bg{
+					transform: scale(0);
+				}
+
+.footer__animated-bg{
+		width: 50px;
+		height: 50px;
+		margin: 5px auto;
+		border-radius: 50%;
+		background: #00FFFF;
+		transform: scale(1);
+		transform-origin: 50% 50%;
+		transition: transform .4s ease-out;
+	}
+
+.footer .fa-facebook-f, .footer .fa-twitter, .footer .fa-youtube{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 20px;
+	}
+
+.footer__about-us{
+		margin-bottom: 50px;
+	}
+
+@media (min-width: 900px){
+
+.footer__about-us{
+			margin-bottom:auto
+	}
+	}
+
+.footer__truck-container{
+		margin-bottom: -30px;
+	}
+
+@media (min-width: 900px){
+
+.footer__truck-container{
+			margin-bottom:auto
+	}
+	}
+
+.footer__trucks-image{
+		display: block;
+	}
+
+.footer__categ{
+		margin-bottom: 50px;
+	}
+
+@media (min-width: 600px){
+
+.footer__categ{
+			margin-bottom:auto
+	}
+	}
+
+.footer__pc-list{
+		padding-top: 15px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid rgba(255,255,255, 0.5);
+	}
+
+.footer__pc-list p{
+			color: rgba(255,255,255, 0.5);
+		}
+
+.footer__pc-list p:hover{
+				cursor: pointer;
+				color:rgba(0,255,255, 1);
+			}
+
+.footer__number{
+		font-size: 32px;
+		color: #fff;
+		font-weight: bold;
+	}
+
+.footer__call{
+		color: #fff;
+		font-size: 21px;
+		font-weight: bold;
+	}
+
+.footer__newsletterhead{
+		margin-top: 40px;
+	}
+
+.footer__love-quote{
+		color: #fff;
+		display: block;
+		text-align: center;
+		font-size: 12px;
+	}
+
+.footer__love-quote .fa-heart{
+			color: #FF0000;
+		}
 
 .grow-right{
 	opacity: 1;

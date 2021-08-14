@@ -25,4 +25,25 @@
 		transform-origin: 0;
 		transition: all .6s ease-out;
 	}
+
+	&__newsletter{
+		div{
+			width: 100%;
+		}
+		div, input{
+			background: rgba($white, 0.3);
+			color: $white;
+		}
+		input, .fa-paper-plane{
+			display: inline-block;
+		}
+		input{
+			width: 80%;
+		}
+		.fa-paper-plane{
+			margin-left: 13px;
+			color: $secondary;
+			cursor: pointer;
+		}
+	}
 }
