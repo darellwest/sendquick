@@ -1,0 +1,13 @@
+.scroll-progress{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+
+	&__indicator{
+		height: 4px;
+  		background: $secondary;
+ 		width: 0%;
+	}
+}

@@ -96,6 +96,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_ZoomOutOnScroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _modules_GrowRightOnScroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
 /* harmony import */ var _modules_SlideCarousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
+/* harmony import */ var _modules_HeaderBgOnScroll__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
+/* harmony import */ var _modules_ScrollIndicator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
+
+
 
 
 
@@ -104,6 +108,8 @@ __webpack_require__.r(__webpack_exports__);
  // import MoveInOnHover from "./modules/MoveInOnHover";
 // let moveInOnHover  = new MoveInOnHover();
 
+var scrollIndicator = new _modules_ScrollIndicator__WEBPACK_IMPORTED_MODULE_7__["default"]();
+var headerBgOnScroll = new _modules_HeaderBgOnScroll__WEBPACK_IMPORTED_MODULE_6__["default"]("site-header", "site-header--addbg");
 var slideCarousel = new _modules_SlideCarousel__WEBPACK_IMPORTED_MODULE_5__["default"]("slide-carousel__item", "carouselContainer");
 var growRightOnScroll = new _modules_GrowRightOnScroll__WEBPACK_IMPORTED_MODULE_4__["default"]("form__input-grow", "home");
 var zoomOutOnScroll = new _modules_ZoomOutOnScroll__WEBPACK_IMPORTED_MODULE_3__["default"]("our-services--each", "home");
@@ -478,6 +484,92 @@ var SlideCarousel = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (SlideCarousel);
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var HeaderBgOnScroll = /*#__PURE__*/function () {
+  function HeaderBgOnScroll(headerId, bgAdderClass) {
+    _classCallCheck(this, HeaderBgOnScroll);
+
+    this.header = document.getElementById(headerId);
+    this.headerHeight = this.header.getBoundingClientRect().height;
+    this.isClass = this.header.classList.contains(bgAdderClass);
+    this.bgClass = bgAdderClass;
+    this.events();
+  }
+
+  _createClass(HeaderBgOnScroll, [{
+    key: "events",
+    value: function events() {
+      window.addEventListener("scroll", this.addHeaderBg.bind(this));
+    }
+  }, {
+    key: "addHeaderBg",
+    value: function addHeaderBg() {
+      if ((document.body.scrollTop > this.headerHeight || document.documentElement.scrollTop > this.headerHeight) && !this.isClass) {
+        this.header.classList.add(this.bgClass);
+      } else {
+        this.header.classList.remove(this.bgClass);
+      }
+    }
+  }]);
+
+  return HeaderBgOnScroll;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (HeaderBgOnScroll);
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var ScrollIndicator = /*#__PURE__*/function () {
+  function ScrollIndicator() {
+    _classCallCheck(this, ScrollIndicator);
+
+    this.winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    this.height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    this.scrolled = this.winScroll / this.height * 100;
+    this.events();
+  }
+
+  _createClass(ScrollIndicator, [{
+    key: "events",
+    value: function events() {
+      window.addEventListener("scroll", this.indicate.bind(this));
+    }
+  }, {
+    key: "indicate",
+    value: function indicate() {
+      this.winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      this.height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      this.scrolled = this.winScroll / this.height * 100;
+      document.getElementById("myBar").style.width = this.scrolled + "%";
+    }
+  }]);
+
+  return ScrollIndicator;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (ScrollIndicator);
 
 /***/ })
 /******/ ]);
