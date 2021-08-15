@@ -446,8 +446,9 @@ option{
 .site-header{
 	z-index: 2;
 	width: 100vw;
-	position: absolute;
+	position: fixed;
 	padding: 8px 0;
+	transition: all 1s ease-out;
 }
 
 .site-header__wrapper{
@@ -560,6 +561,11 @@ option{
 		background: #00FFFF;
 		transform: scale(0);
 		transition: all .3s ease-out;
+	}
+
+.site-header--addbg{
+		background: rgba(0,0,0, 1);
+		box-shadow: 3px 6px 10px 2px rgba(0,0,0, 0.2);
 	}
 
 .primary-nav ul{
@@ -1584,6 +1590,20 @@ option{
 .footer__love-quote .fa-heart{
 			color: #FF0000;
 		}
+
+.scroll-progress{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.scroll-progress__indicator{
+		height: 4px;
+  		background: #FF0000;
+ 		width: 0%;
+	}
 
 .grow-right{
 	opacity: 1;
