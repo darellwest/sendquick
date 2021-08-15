@@ -8,7 +8,7 @@ import HeaderBgOnScroll from "./modules/HeaderBgOnScroll";
 import ScrollIndicator from "./modules/ScrollIndicator";
 // import MoveInOnHover from "./modules/MoveInOnHover";
 // let moveInOnHover  = new MoveInOnHover();
-let scrollIndicator  = new ScrollIndicator();
+let scrollIndicator  = new ScrollIndicator("indicator");
 let headerBgOnScroll  = new HeaderBgOnScroll("site-header", "site-header--addbg");
 let slideCarousel  = new SlideCarousel("slide-carousel__item", "carouselContainer");
 let growRightOnScroll = new GrowRightOnScroll("form__input-grow", "home");

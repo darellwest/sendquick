@@ -108,7 +108,7 @@ __webpack_require__.r(__webpack_exports__);
  // import MoveInOnHover from "./modules/MoveInOnHover";
 // let moveInOnHover  = new MoveInOnHover();
 
-var scrollIndicator = new _modules_ScrollIndicator__WEBPACK_IMPORTED_MODULE_7__["default"]();
+var scrollIndicator = new _modules_ScrollIndicator__WEBPACK_IMPORTED_MODULE_7__["default"]("indicator");
 var headerBgOnScroll = new _modules_HeaderBgOnScroll__WEBPACK_IMPORTED_MODULE_6__["default"]("site-header", "site-header--addbg");
 var slideCarousel = new _modules_SlideCarousel__WEBPACK_IMPORTED_MODULE_5__["default"]("slide-carousel__item", "carouselContainer");
 var growRightOnScroll = new _modules_GrowRightOnScroll__WEBPACK_IMPORTED_MODULE_4__["default"]("form__input-grow", "home");
@@ -542,12 +542,13 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var ScrollIndicator = /*#__PURE__*/function () {
-  function ScrollIndicator() {
+  function ScrollIndicator(indicatorId) {
     _classCallCheck(this, ScrollIndicator);
 
     this.winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     this.height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     this.scrolled = this.winScroll / this.height * 100;
+    this.indicator = indicatorId;
     this.events();
   }
 
@@ -562,7 +563,7 @@ var ScrollIndicator = /*#__PURE__*/function () {
       this.winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       this.height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       this.scrolled = this.winScroll / this.height * 100;
-      document.getElementById("myBar").style.width = this.scrolled + "%";
+      document.getElementById(this.indicator).style.width = this.scrolled + "%";
     }
   }]);
 

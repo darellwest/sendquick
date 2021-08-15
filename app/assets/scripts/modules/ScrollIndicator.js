@@ -1,8 +1,9 @@
 class ScrollIndicator{
-	constructor(){
+	constructor(indicatorId){
 		this.winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 		this.height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 		this.scrolled = (this.winScroll / this.height) * 100;
+		this.indicator = indicatorId;
 		this.events();
 	}
 	events(){
@@ -12,7 +13,7 @@ class ScrollIndicator{
 		this.winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 		this.height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   		this.scrolled = (this.winScroll / this.height) * 100;
-  		document.getElementById("myBar").style.width = this.scrolled + "%";
+  		document.getElementById(this.indicator).style.width = this.scrolled + "%";
 	}
 }
 
