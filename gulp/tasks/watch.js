@@ -20,6 +20,6 @@ function watches(){
 	watch('./app/**/*.html', html);
 	watch('./app/assets/styles/**/*.css', series(css));
 	watch('./app/assets/scripts/**/*.js', series(scripts, refresh));
-};
+}
 
 exports.watcher = watches;

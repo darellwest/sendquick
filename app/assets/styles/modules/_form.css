@@ -3,6 +3,14 @@
 	&__form{
 		/*margin-bottom: -12px;*/
 	}
+	&__notify{
+		display: none;
+		color: $secondary;
+		margin-bottom: 10px;
+		&--show{
+			display: block;
+		}
+	}
 	&__group{
 		margin-bottom: 12px;
 		label, input, select{

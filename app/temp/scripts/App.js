@@ -98,6 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_SlideCarousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 /* harmony import */ var _modules_HeaderBgOnScroll__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
 /* harmony import */ var _modules_ScrollIndicator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
+/* harmony import */ var _modules_QuotePrice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9);
 
 
 
@@ -105,9 +106,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import MoveInOnHover from "./modules/MoveInOnHover";
+
+ // import GetCountries from "./modules/GetCountries";
+// import MoveInOnHover from "./modules/MoveInOnHover";
 // let moveInOnHover  = new MoveInOnHover();
+// let getCountries  = new GetCountries();
 
+var quotePrice = new _modules_QuotePrice__WEBPACK_IMPORTED_MODULE_8__["default"]("indicator");
 var scrollIndicator = new _modules_ScrollIndicator__WEBPACK_IMPORTED_MODULE_7__["default"]("indicator");
 var headerBgOnScroll = new _modules_HeaderBgOnScroll__WEBPACK_IMPORTED_MODULE_6__["default"]("site-header", "site-header--addbg");
 var slideCarousel = new _modules_SlideCarousel__WEBPACK_IMPORTED_MODULE_5__["default"]("slide-carousel__item", "carouselContainer");
@@ -571,6 +576,195 @@ var ScrollIndicator = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (ScrollIndicator);
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var QuotePrice = /*#__PURE__*/function () {
+  function QuotePrice() {
+    _classCallCheck(this, QuotePrice);
+
+    this.chargeRate = {
+      Air: 400,
+      Sea: 300,
+      Land: 200,
+      Express: 800,
+      Normal: 200
+    };
+    this.submitCick = document.getElementById("get-quote");
+    this.closeQuote = document.getElementsByClassName("fa-times-circle")[0];
+    this.quoteModal = document.getElementById("quote-modal");
+    this.spinner = document.getElementsByClassName("fa-spinner")[0];
+    this.Urgency;
+    this.freightType;
+    this.quoteNotify = document.getElementById("quote-notify");
+    this.alertBox = document.getElementsByClassName("quote-modal__alert-box")[0];
+    this.success = document.getElementsByClassName("quote-modal__success")[0];
+    this.failure = document.getElementsByClassName("quote-modal__failure")[0];
+    this.successQuote = document.getElementsByClassName("quote-modal__success--quote")[0];
+    this.promise;
+    this.isNotValid;
+    this.allInputs;
+    this.fromAddress;
+    this.toAddress;
+    this.distance;
+    this.totalCharge;
+    this.events();
+  }
+
+  _createClass(QuotePrice, [{
+    key: "events",
+    value: function events() {
+      this.submitCick.addEventListener("click", this.call.bind(this));
+      this.closeQuote.addEventListener("click", this.closeQuotePrice.bind(this));
+      google.maps.event.addDomListener(window, 'load', this.autoCompleteInput());
+    }
+  }, {
+    key: "autoCompleteInput",
+    value: function autoCompleteInput() {
+      this.fromAddress = new google.maps.places.Autocomplete(document.getElementById('from-country'));
+      this.toAddress = new google.maps.places.Autocomplete(document.getElementById('to-country'));
+      google.maps.event.addListener(this.fromAddress, 'place_changed', this.autoCompleteFrom.bind(this));
+      google.maps.event.addListener(this.toAddress, 'place_changed', this.autoCompleteTo.bind(this));
+    }
+  }, {
+    key: "autoCompleteFrom",
+    value: function autoCompleteFrom() {
+      this.fromAddress = this.fromAddress.getPlace().formatted_address; // this.fromAddress = from_place.formatted_address;
+      //.replace(/\s+/g,"+")
+
+      console.log(this.fromAddress.length);
+    }
+  }, {
+    key: "autoCompleteTo",
+    value: function autoCompleteTo() {
+      this.toAddress = this.toAddress.getPlace().formatted_address; //replace(/\s+/g,"+")
+      // this.toAddress = this.toPlaces.formatted_address;
+    }
+  }, {
+    key: "closeQuotePrice",
+    value: function closeQuotePrice() {
+      this.quoteModal.classList.remove("quote-modal--show");
+      window.location.reload();
+    }
+  }, {
+    key: "calculate",
+    value: function calculate() {
+      var toAddress, fromAddress;
+      toAddress = this.toAddress;
+      fromAddress = this.fromAddress; // console.log(this.fromAddress + "as at calculate function");
+
+      return new Promise(function (resolve, reject) {
+        var xhttp, response, baseLink, i, geoPara;
+        geoPara = [];
+        baseLink = "https://maps.googleapis.com/maps/api/geocode/json?address=";
+
+        for (i = 0; i < 2; i++) {
+          // to_address = this.toAddress.replace(/\s+/g,"+");
+          // from_address = this.fromAddress.replace(/\s+/g,"+");
+          // console.log(to_address);
+          // console.log(from_address);
+          xhttp = new XMLHttpRequest();
+
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              response = JSON.parse(this.responseText);
+              console.log(this.response);
+              geoPara.push(response.results[0].geometry.location); // geoPara.push(response);
+            }
+          };
+
+          if (i == 0) {
+            xhttp.open("GET", baseLink + fromAddress + "&key=AIzaSyBgUcqDp3Qb37vgJXsgy3_NiV8DwLrt51Q");
+          } else if (i == 1) {
+            xhttp.open("GET", baseLink + toAddress + "&key=AIzaSyBgUcqDp3Qb37vgJXsgy3_NiV8DwLrt51Q");
+          }
+
+          xhttp.send();
+        }
+
+        setTimeout(function () {
+          var geoParaLent; // this.spinner.style.display = "none";
+
+          geoParaLent = geoPara.length;
+
+          if (geoParaLent > 1) {
+            console.log(geoParaLent);
+            resolve(geoPara);
+          } else {
+            reject();
+          }
+        }, 6000);
+      });
+    } // promiseTimeout(){
+    // }
+
+  }, {
+    key: "checkIt",
+    value: function checkIt() {
+      return this.allInputs.some(function (item) {
+        return item == "Select" || item == undefined;
+      });
+    }
+  }, {
+    key: "call",
+    value: function call(e) {
+      var _this = this;
+
+      e.preventDefault();
+      this.Urgency = document.getElementById("urgency").value;
+      console.log(this.Urgency);
+      this.freightType = document.getElementById("freight-type").value;
+      this.allInputs = [this.fromAddress, this.toAddress, this.Urgency, this.freightType];
+      this.isNotValid = this.checkIt();
+      console.log(this.isNotValid);
+
+      if (this.isNotValid) {
+        this.quoteNotify.classList.add("form__notify--show");
+      } else {
+        console.log("Are we running else"); // this.alertBox.remove("quote-modal__alert-box--show");
+
+        this.spinner.style.display = "block";
+        console.log(this.spinner.style.display);
+        this.quoteModal.classList.add("quote-modal--show");
+        this.promise = this.calculate();
+        this.promise.then(function (result) {
+          console.log(_this + " why");
+          console.log(result);
+          _this.distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(result[0].lat, result[0].lng), new google.maps.LatLng(result[1].lat, result[1].lng));
+          _this.distance = Math.ceil(_this.distance * 0.0001);
+          _this.totalCharge = _this.distance + _this.chargeRate[_this.Urgency] + _this.chargeRate[_this.freightType];
+          _this.success.style.display = "block";
+          _this.failure.style.display = "none";
+          _this.spinner.style.display = "none";
+          _this.successQuote.textContent = "$" + _this.totalCharge;
+
+          _this.alertBox.classList.add("quote-modal__alert-box--show");
+        }, function (error) {
+          console.log(error + "we got");
+          _this.spinner.style.display = "none";
+          _this.success.style.display = "none";
+          _this.failure.style.display = "block";
+
+          _this.alertBox.classList.add("quote-modal__alert-box--show");
+        });
+      }
+    }
+  }]);
+
+  return QuotePrice;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (QuotePrice);
 
 /***/ })
 /******/ ]);
