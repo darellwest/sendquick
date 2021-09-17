@@ -99,20 +99,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_HeaderBgOnScroll__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
 /* harmony import */ var _modules_ScrollIndicator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
 /* harmony import */ var _modules_QuotePrice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9);
+/* harmony import */ var _modules_OfficeMap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(10);
 
 
 
 
 
 
+
+ // import ApiKeys from "./modules/ApiKeys";
 
 
  // import GetCountries from "./modules/GetCountries";
 // import MoveInOnHover from "./modules/MoveInOnHover";
 // let moveInOnHover  = new MoveInOnHover();
 // let getCountries  = new GetCountries();
+// let apiKeys  = new ApiKeys();
 
-var quotePrice = new _modules_QuotePrice__WEBPACK_IMPORTED_MODULE_8__["default"]("indicator");
+var officeMap = new _modules_OfficeMap__WEBPACK_IMPORTED_MODULE_9__["default"]();
+var quotePrice = new _modules_QuotePrice__WEBPACK_IMPORTED_MODULE_8__["default"]();
 var scrollIndicator = new _modules_ScrollIndicator__WEBPACK_IMPORTED_MODULE_7__["default"]("indicator");
 var headerBgOnScroll = new _modules_HeaderBgOnScroll__WEBPACK_IMPORTED_MODULE_6__["default"]("site-header", "site-header--addbg");
 var slideCarousel = new _modules_SlideCarousel__WEBPACK_IMPORTED_MODULE_5__["default"]("slide-carousel__item", "carouselContainer");
@@ -765,6 +770,52 @@ var QuotePrice = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (QuotePrice);
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var OfficeMap = /*#__PURE__*/function () {
+  function OfficeMap() {
+    _classCallCheck(this, OfficeMap);
+
+    this.initMap();
+  } // Initialize and add the map
+
+
+  _createClass(OfficeMap, [{
+    key: "initMap",
+    value: function initMap() {
+      // The location of Uluru
+      var abuja = {
+        lat: 9.056097099999999,
+        lng: 7.481895999999999
+      }; // The map, centered at Uluru
+
+      var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 8,
+        center: abuja
+      }); // The marker, positioned at Uluru
+
+      var marker = new google.maps.Marker({
+        position: abuja,
+        map: map
+      });
+    }
+  }]);
+
+  return OfficeMap;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (OfficeMap);
 
 /***/ })
 /******/ ]);

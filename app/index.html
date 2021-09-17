@@ -477,8 +477,7 @@
 							<div><span class="our-office__icon fas fa-map-marker-alt"></span></div>
 							<div>
 								<h3 class="our-office__details-title section-subtitle">Our Location</h3>
-								<p>60 East 65th Street
-								Abuja</p>
+								<p>785 Samuel Ademulegun Ave, Central Business Dis 900103, Abuja, Nigeria</p>
 							</div>
 						</div>
 						<div class="our-office__block">
@@ -510,7 +509,7 @@
 			</div>
 		</div>
 		<div class="row__col-sm-6">
-			<div id="map"></div>
+			<div id="map" style="width: 100%; height: 700px"></div>
 			<!-- <iframe src="https://www.atlistmaps.com/map/6c0f4d7d-5e3e-4998-9ca5-687d4fba4e71?share=true" allow="geolocation" width="100%" height="700px" frameborder="0" scrolling="no" allowfullscreen></iframe> -->
 		</div>
 		</div>
@@ -600,19 +599,8 @@
 		  </div>
 		</div>
 	</section>
-	<script src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places&language=en&key=AIzaSyD0_l5NV754JgMZk4nGz5KRwCRGHhLWUQ0"></script>
-
-	<script src ="temp/scripts/App.js"></script>
+	<script  id="apikey"  src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places&language=en&v=weekly&callback=initMap&key=AIzaSyBqNGZW9JavTY9ifpy4kz_Uhd18rPR2Dwk"></script>
+	 <script src ="temp/scripts/App.js"></script>
 	
-	<script type="text/javascript">
-		let map;
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-}
-	</script>
 </body>
 </html>
